@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Vue微信公式插件",
+  "version": "1.0.0",
+  "description": "",
+
+  "permissions": ["activeTab", "scripting", "tabs"],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["assets/js/contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/**/*", "mathjax/es5/**/*", "mathjax/es5/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "action": {
+    "default_title": "注入LateX公式"
+  }
+}
