@@ -150,7 +150,7 @@ watch([formula, displayMode], renderMathJax)
 .SvgShowBox {
   overflow: auto;
   margin: 10px 0;
-  min-height: 50px;
+  height: 150px;
 }
 label {
   font-size: 14px;
