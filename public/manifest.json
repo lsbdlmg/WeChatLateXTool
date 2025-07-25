@@ -8,7 +8,7 @@
 
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["*://mp.weixin.qq.com/*"],
       "js": ["assets/js/contentScript.js"],
       "run_at": "document_end"
     }
