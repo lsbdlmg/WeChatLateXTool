@@ -1,16 +1,3 @@
-<template>
-  <div class="inputBox">
-    <p>输入区域</p>
-    <textarea
-      v-model="inputValue"
-      placeholder="请输入你的LateX表达式"
-      @focus="updateCursorPosition"
-      @input="updateCursorPosition"
-      @selectionchange="updateCursorPosition"
-    ></textarea>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
@@ -25,8 +12,7 @@ const inputValue = computed({
     store.commit('SET_INPUT_VALUE', value)
   },
 })
-
-// 更新光标位置
+// 更新光标位置（后续放快捷输入的时候用）
 const updateCursorPosition = () => {
   if (textareaRef.value) {
     const position = textareaRef.value.selectionStart
@@ -38,11 +24,22 @@ onMounted(() => {
   textareaRef.value = document.querySelector('.inputBox textarea')
 })
 </script>
-
+<template>
+  <div class="inputBox">
+    <p>输入区域</p>
+    <textarea
+      v-model="inputValue"
+      placeholder="请输入你的LateX表达式"
+      @focus="updateCursorPosition"
+      @input="updateCursorPosition"
+      @selectionchange="updateCursorPosition"
+    ></textarea>
+  </div>
+</template>
 <style lang="less">
 .inputBox {
-  width: 200px;
-  height: 150px;
+  width: 270px;
+  height: 80px;
   margin: 0 0 5px;
   p {
     font-weight: 700;
@@ -53,8 +50,8 @@ onMounted(() => {
     font-size: 14x;
     padding: 0 5px;
     border: 1px solid #ccc;
-    width: 100%;
-    height: 120px;
+    width: 270px;
+    height: 50px;
     outline: none;
   }
 }
