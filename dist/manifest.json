@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Vue微信公式插件",
+  "name": "SCUT-LateXTool",
   "version": "1.0.0",
   "description": "",
 
@@ -17,11 +17,23 @@
   "web_accessible_resources": [
     {
       "resources": ["assets/**/*", "mathjax/es5/**/*", "mathjax/es5/*"],
-      "matches": ["<all_urls>"]
+      "matches": ["*://mp.weixin.qq.com/*"]
     }
   ],
 
   "action": {
-    "default_title": "注入LateX公式"
+    "default_title": "微信公众平台LateX公式插件",
+    "default_icon": {
+      "16": "assets/images/icon-16.png",
+      "32": "assets/images/icon-32.png",
+      "48": "assets/images/icon-48.png",
+      "128": "assets/images/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/images/icon-16.png",
+    "32": "assets/images/icon-32.png",
+    "48": "assets/images/icon-48.png",
+    "128": "assets/images/icon-128.png"
   }
 }

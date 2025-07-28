@@ -3,7 +3,6 @@ import { computed } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
 const svgCode = computed(() => store.getters.getSvgCode)
-const displayStyle = computed(() => store.getters.getDisplayStyle)
 //光标处分离文本并插入svg
 const splitAndInsertAtCursor = () => {
   if (!svgCode.value) {
@@ -62,45 +61,21 @@ const splitAndInsertAtCursor = () => {
     const textBefore = originalText.substring(0, textOffset)
     const textAfter = originalText.substring(textOffset)
     //紧跟文本是span 并且前后加上空格
-    if (!displayStyle.value) {
-      // 创建新的span元素（前半部分）
-      const spanBefore = window.parent.document.createElement('span')
-      spanBefore.setAttribute('leaf', '')
-      spanBefore.textContent = textBefore
-      // 创建新的span元素（插入svg）
-      const newSpan = window.parent.document.createElement('span')
-      newSpan.innerHTML = '&nbsp;' + svgCode.value + '&nbsp;'
-      // 创建新的span元素（后半部分）
-      const spanAfter = window.parent.document.createElement('span')
-      spanAfter.setAttribute('leaf', '')
-      spanAfter.textContent = textAfter
-      // 替换原span元素
-      leafSpan.parentNode.replaceChild(spanBefore, leafSpan)
-      spanBefore.parentNode.insertBefore(newSpan, spanBefore.nextSibling)
-      spanBefore.parentNode.insertBefore(spanAfter, newSpan.nextSibling)
-    } // 行间换成section 并且后面新添一个段落
-    else {
-      // 创建新的span元素（前半部分）
-      const spanBefore = window.parent.document.createElement('span')
-      spanBefore.setAttribute('leaf', '')
-      spanBefore.textContent = textBefore
-      // 创建新的span元素（插入svg）
-      const newSectionSvg = window.parent.document.createElement('section')
-      const newSpan = window.parent.document.createElement('span')
-      newSpan.innerHTML = svgCode.value
-      newSectionSvg.appendChild(newSpan)
-      // 创建新的span元素（后半部分）
-      const SectionAfter = window.parent.document.createElement('section')
-      const spanAfter = window.parent.document.createElement('span')
-      spanAfter.setAttribute('leaf', '')
-      spanAfter.textContent = textAfter
-      SectionAfter.appendChild(spanAfter)
-      // 替换原span元素
-      leafSpan.parentNode.replaceChild(spanBefore, leafSpan)
-      //spanBefore.parentNode后添加兄弟节点
-      spanBefore.parentNode.after(newSectionSvg)
-      newSectionSvg.after(SectionAfter)
-    }
+    // 创建新的span元素（前半部分）
+    const spanBefore = window.parent.document.createElement('span')
+    spanBefore.setAttribute('leaf', '')
+    spanBefore.textContent = textBefore
+    // 创建新的span元素（插入svg）
+    const newSpan = window.parent.document.createElement('span')
+    newSpan.innerHTML = '&nbsp;' + svgCode.value + '&nbsp;'
+    // 创建新的span元素（后半部分）
+    const spanAfter = window.parent.document.createElement('span')
+    spanAfter.setAttribute('leaf', '')
+    spanAfter.textContent = textAfter
+    // 替换原span元素
+    leafSpan.parentNode.replaceChild(spanBefore, leafSpan)
+    spanBefore.parentNode.insertBefore(newSpan, spanBefore.nextSibling)
+    spanBefore.parentNode.insertBefore(spanAfter, newSpan.nextSibling)
   } catch (error) {
     console.error('分割并插入元素失败:', error)
     return

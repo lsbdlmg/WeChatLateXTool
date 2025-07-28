@@ -38,21 +38,30 @@ onMounted(() => {
 </template>
 <style lang="less">
 .inputBox {
-  width: 270px;
+  width: 280px;
   height: 80px;
   margin: 0 0 5px;
   p {
+    margin: 2px 0 2px 7px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 12px;
   }
   textarea {
     font-weight: 700;
-    font-size: 14x;
-    padding: 0 5px;
+    font-size: 12px;
+    padding: 1px 5px;
+    margin: 0 5px;
     border: 1px solid #ccc;
     width: 270px;
     height: 50px;
+    resize: none; /* 禁止所有拖拽 */
     outline: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    &:focus {
+      border-color: #4d90fe;
+      box-shadow: 0 0 0 2px rgba(77, 144, 254, 0.2);
+    }
   }
 }
 </style>

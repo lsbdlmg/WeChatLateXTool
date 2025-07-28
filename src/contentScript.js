@@ -2,8 +2,7 @@
 // 创建iframe容器 否则mathjax会受主页面影响
 const iframe = document.createElement('iframe')
 iframe.id = 'vue-note-container'
-iframe.style =
-  'position:fixed; top:0; left:0; z-index:9999; width:300px; height:500px; border:none;'
+iframe.style = 'position:fixed; top:0; left:0; z-index:9999; width:80px;height:50px; border:none;'
 iframe.sandbox = 'allow-scripts allow-same-origin'
 iframe.allowTransparency = true
 document.body.appendChild(iframe)

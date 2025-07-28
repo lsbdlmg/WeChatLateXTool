@@ -16,16 +16,16 @@ button {
   border: 1px solid rgb(205, 205, 252);
   font-weight: 700;
   font-size: 14px;
-  background: #7df9f7;
+  background: #005352;
   color: #ffffff;
   border-radius: 5px;
   transition: background 0.3s ease;
   cursor: pointer;
   &:hover {
-    background: #8ffde9;
+    background: #004b3e;
   }
   &:active {
-    background: #75edfa;
+    background: #002c31;
   }
 }
 </style>
