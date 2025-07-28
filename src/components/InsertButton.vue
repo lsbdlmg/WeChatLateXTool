@@ -5,7 +5,7 @@ const store = useStore()
 const svgCode = computed(() => store.getters.getSvgCode)
 //光标处分离文本并插入svg
 const splitAndInsertAtCursor = () => {
-  if (!svgCode.value) {
+  if (svgCode.value == '') {
     window.parent.alert('请输入公式')
     return
   }
