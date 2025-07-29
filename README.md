@@ -45,6 +45,6 @@
    - 打开 Chrome/Edge 浏览器，地址栏输入 `chrome://extensions`
    - 开启「开发者模式」
    - 点击「加载已解压的扩展程序」，选择 `dist` 文件夹即可完成安装
-## 🎬 使用视频
-<video src="https://gitee.com/liangshuidashuai/videos/raw/master/use.mp4" autoplay="true" controls="controls" width="400" height="300"></video>
+## 🎬 使用视频下载链接
+https://gitee.com/liangshuidashuai/videos/raw/master/use.mp4" 
 
