@@ -123,7 +123,7 @@ const processSvg = (tempContainer) => {
     if (!existingStyle.includes('display:')) {
       svgRoot.setAttribute('style', `${existingStyle}; ${displayStyle}`.trim())
     } else {
-      svgRoot.setAttribute('style', existingStyle.replace(/display: [^;]+;/, displayStyle))
+      svgRoot.setAttribute('style', existingStyle.replace(/display: [^;]/, displayStyle))
     }
     //添加data
     svgRoot.setAttribute('data-latex-text', `${formula.value}`)

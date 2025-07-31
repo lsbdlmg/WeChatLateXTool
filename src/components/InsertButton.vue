@@ -29,7 +29,7 @@ const splitAndInsertAtCursor = () => {
       leafSpan = leafSpan.parentElement
     }
     // 验证是否为目标span元素
-    if (!leafSpan || leafSpan.tagName !== 'SPAN' || !leafSpan.hasAttribute('leaf')) {
+    if (!leafSpan || leafSpan.tagName !== 'SPAN') {
       window.parent.alert('请在正文光标处输入文本，以确认插入位置')
       return
     }
