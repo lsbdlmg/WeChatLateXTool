@@ -28,9 +28,30 @@ const splitAndInsertAtCursor = () => {
     if (leafSpan.nodeType === 3) {
       leafSpan = leafSpan.parentElement
     }
-    // 验证是否为目标span元素
-    if (!leafSpan || leafSpan.tagName !== 'SPAN') {
-      window.parent.alert('请在正文光标处输入文本，以确认插入位置')
+    let insertPosition = true
+    // 验证是否为目标<span leaf>元素
+    if (!leafSpan || leafSpan.tagName !== 'SPAN' || !leafSpan.hasAttribute('leaf')) {
+      insertPosition = false
+    }
+    if (!insertPosition) {
+      let currentNode = leafSpan.parentElement // 从父节点开始查找
+      // 向上遍历直到找到段落section节点或到达文档根节点
+      while (currentNode) {
+        // 检查当前节点是否是 span 且具有 leaf 属性
+        if (currentNode.tagName === 'SECTION') break
+        currentNode = currentNode.parentElement // 继续向上查找
+      }
+      if (!currentNode) {
+        window.parent.alert('请在正文处插入公式')
+        return
+      }
+      const newSpan = window.parent.document.createElement('span')
+      newSpan.innerHTML = '&nbsp;' + svgCode.value + '&nbsp;'
+      // 创建新的span元素（后半部分）
+      const spanAfter = window.parent.document.createElement('span')
+      spanAfter.setAttribute('leaf', '')
+      currentNode.appendChild(newSpan)
+      currentNode.appendChild(spanAfter)
       return
     }
     // 2. 获取光标在span中的偏移量
