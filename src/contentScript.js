@@ -22,6 +22,6 @@ iframeDoc.body.appendChild(scriptMain)
 // 动态加载扩展内的 MathJax 脚本
 const scriptMathJax = iframeDoc.createElement('script')
 // 加载扩展本地的 MathJax 资源
-scriptMathJax.src = chrome.runtime.getURL('mathjax/es5/tex-svg-full.js')
+scriptMathJax.src = chrome.runtime.getURL('assets/js/tex-svg-full.js')
 // 添加到页面
 iframeDoc.body.appendChild(scriptMathJax)
