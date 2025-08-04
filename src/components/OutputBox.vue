@@ -1,5 +1,5 @@
 <script setup>
-import { watch, computed } from 'vue'
+import { watch, computed, ref } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
 const formula = computed(() => store.getters.getInputValue) //需要从vuex获取
@@ -12,14 +12,7 @@ const svgCode = computed({
     store.commit('SET_SVGCODE', value)
   },
 })
-const displayMode = computed({
-  get() {
-    return store.getters.getDisplayStyle
-  },
-  set(value) {
-    store.commit('SET_DISPLAY_STYLE', value)
-  },
-})
+const displayMode = ref(true)
 // // 渲染MathJax
 const renderMathJax = async () => {
   if (!window.MathJax) {
@@ -148,6 +141,10 @@ watch([formula, displayMode], renderMathJax)
   height: 80px;
 }
 label {
+  input {
+    margin-left: 5px;
+    height: 10px;
+  }
   font-size: 14px;
 }
 </style>

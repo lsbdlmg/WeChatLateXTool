@@ -42,7 +42,7 @@ const showLetters = ref(false)
     z-index: 10000;
     position: fixed;
     width: 280px;
-    top: 275px;
+    top: 274px;
     left: 10px;
     border: 1px solid gray;
     border-end-end-radius: 10px;
