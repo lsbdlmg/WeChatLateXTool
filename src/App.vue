@@ -48,6 +48,9 @@ onMounted(() => {
   const removeListener = setupDoubleClickListener()
   onUnmounted(removeListener) //卸载时清理
 })
+const goTutorial = () => {
+  window.parent.open('https://blog.csdn.net/Yushan_Ji/article/details/134322574')
+}
 </script>
 <template>
   <!-- 打开工具按钮 -->
@@ -60,6 +63,7 @@ onMounted(() => {
       <InputBox></InputBox>
       <!-- 输出框 -->
       <OutputBox></OutputBox>
+      <button class="goTutorial" @click="goTutorial">输入教程</button>
       <!-- 插入按钮 -->
       <InsertButton class="InsertButton"></InsertButton>
       <!-- 取消按钮 -->
@@ -90,18 +94,36 @@ onMounted(() => {
     background: #ffffff;
     .CancelButton {
       position: relative;
-      right: -107px;
+      right: -35px;
       bottom: 0;
     }
     .InsertButton {
       position: relative;
-      right: -105px;
+      right: -30px;
       bottom: 0;
     }
   }
   .ShortCutToolBox {
     display: flex;
     width: 100%;
+  }
+  .goTutorial {
+    margin-left: 1px;
+    padding: 5px;
+    border: 1px solid rgb(205, 205, 252);
+    font-weight: 700;
+    font-size: 14px;
+    background: #7d88f9;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      background: #0066ff;
+    }
+    &:active {
+      background: #0052cc;
+    }
   }
 }
 </style>
