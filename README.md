@@ -55,5 +55,6 @@
    - 点击「加载已解压的扩展程序」，选择 `dist` 文件夹即可完成安装
 
 ## 🎬 使用视频下载链接
-
+- 在gitee直接点击下方链接自动下载
+- 在github复制链接到新标签页自动下载
 https://gitee.com/liangshuidashuai/videos/raw/master/use.mp4
