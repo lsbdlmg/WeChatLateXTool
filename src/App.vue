@@ -105,7 +105,8 @@ const goTutorial = () => {
   }
   .ShortCutToolBox {
     display: flex;
-    width: 100%;
+    width: 280px;
+    border: 1px black solid;
   }
   .goTutorial {
     margin-left: 1px;
