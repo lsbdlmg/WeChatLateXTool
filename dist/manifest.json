@@ -8,7 +8,7 @@
 
   "content_scripts": [
     {
-      "matches": ["*://mp.weixin.qq.com/*", "<all_urls>"],
+      "matches": ["*://mp.weixin.qq.com/*"],
       "js": ["assets/js/contentScript.js"],
       "run_at": "document_end"
     }
@@ -17,7 +17,7 @@
   "web_accessible_resources": [
     {
       "resources": ["assets/**/*", "mathjax/es5/**/*", "mathjax/es5/*"],
-      "matches": ["*://mp.weixin.qq.com/*", "<all_urls>"]
+      "matches": ["*://mp.weixin.qq.com/*"]
     }
   ],
 
