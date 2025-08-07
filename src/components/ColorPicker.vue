@@ -12,7 +12,9 @@ const props = defineProps({
     type: String,
   },
 })
+//默认 字体颜色or背景颜色
 const defaultColor = props.isBgColor ? 'transparent' : 'inherit'
+//字体颜色or背景颜色
 const svgCodeColor = props.isBgColor
   ? computed({
       get() {
@@ -33,13 +35,14 @@ const svgCodeColor = props.isBgColor
 
 // 状态管理
 const isOpen = ref(false)
+// 存放最近颜色
 const recentColors = ref([])
 
 // 临时状态
 const tempInputColor = ref('#000000')
 const isValidTempInput = ref('false')
 
-// 基本颜色集合（精简以适应高度）
+// 基本颜色集合
 const basicColors = [
   '#000000',
   '#333333',
@@ -64,6 +67,16 @@ const basicColors = [
   '#B2EBF2',
   '#BBDEFB',
   '#C8E6C9',
+  '#D1C4E9',
+  '#F8BBD0',
+  '#E1BEE7',
+  '#FFCDD2',
+  '#FFECB3',
+  '#81C784',
+  '#64B5F6',
+  '#7E57C2',
+  '#FF4081',
+  '#A1887F',
 ]
 
 // 验证颜色格式是否有效
@@ -179,7 +192,7 @@ onUnmounted(() => {
     <div class="palette-panel" v-show="isOpen" @click.stop>
       <!-- 最近使用颜色（包含消除颜色） -->
       <div class="section recent-colors">
-        <h3 class="section-title">最近使用-- {{ props.colorTitle }}</h3>
+        <h3 class="section-title">最近使用-- {{ props.isBgColor ? '背景颜色' : '字体颜色' }}</h3>
         <div class="color-grid">
           <!-- 固定添加消除颜色选项 -->
           <div class="color-item clear-color" title="消除颜色" @click="handleClearColor">
