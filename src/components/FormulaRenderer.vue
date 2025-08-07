@@ -33,7 +33,6 @@ const renderedHtmlFn = async () => {
     tempContainer.innerHTML = `\\[ ${props.formula} \\]`
     await window.MathJax.typesetPromise([tempContainer])
     renderedHtml.value = tempContainer.innerHTML
-    // console.log(renderedHtml.value)
     //移除创建的临时容器
     document.body.removeChild(tempContainer)
   } catch (e) {

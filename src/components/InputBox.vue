@@ -23,10 +23,16 @@ const updateCursorPosition = () => {
 onMounted(() => {
   textareaRef.value = document.querySelector('.inputBox textarea')
 })
+const goTutorial = () => {
+  window.parent.open('https://blog.csdn.net/Yushan_Ji/article/details/134322574')
+}
 </script>
 <template>
   <div class="inputBox">
-    <p>输入区域</p>
+    <div class="titleBox">
+      <p>输入区域</p>
+      <button class="goTutorial" @click="goTutorial">输入教程</button>
+    </div>
     <textarea
       v-model="inputValue"
       placeholder="请输入你的LateX表达式"
@@ -41,11 +47,37 @@ onMounted(() => {
   width: 280px;
   height: 80px;
   margin: 0 0 5px;
-  p {
-    margin: 2px 0 2px 7px;
-    font-weight: 700;
-    font-size: 12px;
+  .titleBox {
+    display: flex;
+    gap: 5px;
+    margin: 2px 0;
+    .goTutorial {
+      position: relative;
+      left: 150px;
+      padding: 2px 5px;
+      border: 1px solid rgb(205, 205, 252);
+      font-weight: 700;
+      font-size: 12px;
+      background: #7d88f9;
+      color: #ffffff;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      &:hover {
+        background: #0066ff;
+      }
+      &:active {
+        background: #0052cc;
+      }
+    }
+    p {
+      margin: 2px 0 2px 7px;
+      font-weight: 700;
+      width: 50px;
+      font-size: 12px;
+    }
   }
+
   textarea {
     font-weight: 700;
     font-size: 12px;

@@ -4,6 +4,10 @@ const store = useStore()
 //重置输入框的值
 const resetInputValue = () => {
   store.commit('SET_INPUT_VALUE', '')
+  store.commit('SET_SVGFONTSIZE', '17')
+  store.commit('SET_SVGCOLOR', 'inherit')
+  store.commit('SET_SVGBGCOLOR', 'transparent')
+  store.commit('SET_SVGDISPLAYMODE', true)
 }
 </script>
 <template>

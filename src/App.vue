@@ -18,8 +18,18 @@ const setupDoubleClickListener = () => {
     const targetElement = event.target.closest('[data-latex-text]')
     if (targetElement) {
       // 获取属性值
-      const latexText = targetElement.getAttribute('data-latex-text')
+      const latexText = targetElement.getAttribute('data-latex-text') || ''
+      const svgFontSize = targetElement.getAttribute('data-latex-fontsize') || '17'
+      const svgColor = targetElement.getAttribute('data-latex-fontcolor') || 'inherit'
+      const svgBgColor = targetElement.getAttribute('data-latex-bgcolor') || 'transparent'
+      const attrValue = targetElement.getAttribute('data-latex-display')
+      // 转换为布尔值
+      const svgDisplayMode = attrValue === null ? true : attrValue === 'true'
       store.commit('SET_INPUT_VALUE', latexText)
+      store.commit('SET_SVGFONTSIZE', svgFontSize)
+      store.commit('SET_SVGCOLOR', svgColor)
+      store.commit('SET_SVGBGCOLOR', svgBgColor)
+      store.commit('SET_SVGDISPLAYMODE', svgDisplayMode)
       isShowLateX.value = true
     }
   }
@@ -48,9 +58,6 @@ onMounted(() => {
   const removeListener = setupDoubleClickListener()
   onUnmounted(removeListener) //卸载时清理
 })
-const goTutorial = () => {
-  window.parent.open('https://blog.csdn.net/Yushan_Ji/article/details/134322574')
-}
 </script>
 <template>
   <!-- 打开工具按钮 -->
@@ -63,7 +70,7 @@ const goTutorial = () => {
       <InputBox></InputBox>
       <!-- 输出框 -->
       <OutputBox></OutputBox>
-      <button class="goTutorial" @click="goTutorial">输入教程</button>
+
       <!-- 插入按钮 -->
       <InsertButton class="InsertButton"></InsertButton>
       <!-- 取消按钮 -->
@@ -89,42 +96,24 @@ const goTutorial = () => {
   height: 300px;
   overflow-y: auto;
   .ShowLateX {
-    border: 1px black solid;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background: #ffffff;
     .CancelButton {
       position: relative;
-      right: -35px;
+      right: -25px;
       bottom: 0;
     }
     .InsertButton {
       position: relative;
-      right: -30px;
+      right: -20px;
       bottom: 0;
     }
   }
   .ShortCutToolBox {
     display: flex;
     width: 280px;
-    border: 1px black solid;
-  }
-  .goTutorial {
-    margin-left: 1px;
-    padding: 5px;
-    border: 1px solid rgb(205, 205, 252);
-    font-weight: 700;
-    font-size: 14px;
-    background: #7d88f9;
-    color: #ffffff;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    cursor: pointer;
-    &:hover {
-      background: #0066ff;
-    }
-    &:active {
-      background: #0052cc;
-    }
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 </style>

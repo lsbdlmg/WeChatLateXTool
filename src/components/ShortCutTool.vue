@@ -44,7 +44,7 @@ const showLetters = ref(false)
     width: 280px;
     top: 274px;
     left: 10px;
-    border: 1px solid gray;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-end-end-radius: 10px;
     border-end-start-radius: 10px;
     background: #fff;

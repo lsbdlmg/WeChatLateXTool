@@ -18,9 +18,8 @@ defineProps({
 .DropDownTitle {
   background: #ffffff;
   width: 100%;
-  --DropDownTitle-height: 20px;
-  height: var(--DropDownTitle-height);
-  line-height: var(--DropDownTitle-height);
+  height: 20px;
+  line-height: 20px;
   display: flex;
   gap: 0.5vw;
   font-size: 10px;
