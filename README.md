@@ -77,4 +77,4 @@
 
 - 在gitee直接点击下方链接自动下载
 - 在github复制链接到新标签页自动下载
-- https://gitee.com/liangshuidashuai/videos/raw/master/use.mp4
+- https://gitee.com/liangshuidashuai/videos/raw/master/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.mp4
