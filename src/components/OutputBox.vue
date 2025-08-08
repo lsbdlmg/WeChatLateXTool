@@ -179,7 +179,7 @@ const processSvgStyles = () => {
   } else {
     // inline模式下移除margin
     styleMap.delete('margin')
-    styleMap.set('vertical-align', '-1px')
+    styleMap.set('vertical-align', '-3px')
   }
   // 3. 合并为规范的样式字符串
   const cleanedStyles = Array.from(styleMap.entries())
