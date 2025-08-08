@@ -7,7 +7,7 @@ export default createStore({
     svgFontSize: '17', //svg体大小
     svgColor: 'inherit', //svg字体颜色
     svgBgColor: 'transparent', //svg背景颜色
-    svgDisplayMode: false,
+    svgDisplayMode: true,
   },
   mutations: {
     //组件修改仓库的值

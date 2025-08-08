@@ -41,8 +41,8 @@ const showLetters = ref(false)
   .AllLettersBox {
     z-index: 10000;
     position: fixed;
-    width: 280px;
-    top: 274px;
+    width: 280.5px;
+    top: 265px;
     left: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-end-end-radius: 10px;

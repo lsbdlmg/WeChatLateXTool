@@ -53,14 +53,14 @@ const goTutorial = () => {
     margin: 2px 0;
     .goTutorial {
       position: relative;
-      left: 150px;
-      padding: 2px 5px;
+      left: 155px;
+      padding: 2px 4px;
       border: 1px solid rgb(205, 205, 252);
       font-weight: 700;
       font-size: 12px;
       background: #7d88f9;
       color: #ffffff;
-      border-radius: 5px;
+      border-radius: 4px;
       transition: background 0.3s ease;
       cursor: pointer;
       &:hover {
@@ -83,16 +83,44 @@ const goTutorial = () => {
     font-size: 12px;
     padding: 1px 5px;
     margin: 0 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #e0e0e0;
     width: 270px;
     height: 50px;
-    resize: none; /* 禁止所有拖拽 */
+    resize: none;
     outline: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    border-radius: 3px;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
+    background-color: #fafafa;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+    /* 聚焦状态强化 */
     &:focus {
       border-color: #4d90fe;
-      box-shadow: 0 0 0 2px rgba(77, 144, 254, 0.2);
+      box-shadow: 0 0 0 1px rgba(77, 144, 254, 0.25);
+      background-color: #fff;
+      border-width: 1.5px;
+    }
+
+    // 滚动条样式
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f5f5f5;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #d1d1d1;
+      border-radius: 3px;
+
+      &:hover {
+        background: #a8a8a8;
+      }
     }
   }
 }

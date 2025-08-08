@@ -287,7 +287,7 @@ onUnmounted(() => {
 // 调色板面板
 .palette-panel {
   position: fixed;
-  top: 253px;
+  top: 250px;
   left: 10px;
   background: white;
   border-bottom-right-radius: @border-radius;

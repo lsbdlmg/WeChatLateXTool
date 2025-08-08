@@ -47,7 +47,7 @@ const setupIframeStyle = () => {
     LateXiframe.style.width = '300px'
     LateXiframe.style.height = '600px'
   } else {
-    LateXiframe.style.width = '80px'
+    LateXiframe.style.width = '70px'
     LateXiframe.style.height = '50px'
   }
 }
@@ -94,25 +94,15 @@ onMounted(() => {
   left: 10px;
   width: 282px;
   height: 300px;
-  overflow-y: auto;
   .ShowLateX {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     background: #ffffff;
-    .CancelButton {
-      position: relative;
-      right: -25px;
-      bottom: 0;
-    }
-    .InsertButton {
-      position: relative;
-      right: -20px;
-      bottom: 0;
-    }
   }
   .ShortCutToolBox {
     display: flex;
-    width: 280px;
+    width: 280.5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
 }

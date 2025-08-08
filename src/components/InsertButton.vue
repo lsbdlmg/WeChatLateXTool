@@ -108,14 +108,17 @@ const splitAndInsertAtCursor = () => {
 </template>
 <style scoped lang="less">
 button {
+  position: relative;
+  right: -35px;
+  bottom: -1px;
   margin-left: 1px;
-  padding: 5px;
+  padding: 4px;
   border: 1px solid rgb(205, 205, 252);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   background: #fc6d00;
   color: #ffffff;
-  border-radius: 5px;
+  border-radius: 4px;
   transition: background 0.3s ease;
   cursor: pointer;
   &:hover {
