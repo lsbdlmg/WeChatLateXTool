@@ -175,9 +175,11 @@ const processSvgStyles = () => {
   if (displayMode.value) {
     // 仅block模式下添加margin
     styleMap.set('margin', '10px auto')
+    styleMap.delete('vertical-align')
   } else {
     // inline模式下移除margin
     styleMap.delete('margin')
+    styleMap.set('vertical-align', '-1px')
   }
   // 3. 合并为规范的样式字符串
   const cleanedStyles = Array.from(styleMap.entries())

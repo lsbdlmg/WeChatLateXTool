@@ -38,7 +38,7 @@ const splitAndInsertAtCursor = () => {
       // 向上遍历直到找到段落section节点或到达文档根节点
       while (currentNode) {
         // 检查当前节点是否是 span 且具有 leaf 属性
-        if (currentNode.tagName === 'SECTION') break
+        if (currentNode.tagName === 'SECTION' || currentNode.tagName === 'P') break
         currentNode = currentNode.parentElement // 继续向上查找
       }
       if (!currentNode) {
